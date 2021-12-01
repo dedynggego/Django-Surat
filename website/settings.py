@@ -74,14 +74,21 @@ WSGI_APPLICATION = 'website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'surat',
+#         'USER': 'admin',
+#         'PASSWORD': 'nggego12',
+#         'HOST' : 'localhost',
+#         'PORT' : '3306',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'surat',
-        'USER': 'admin',
-        'PASSWORD': 'nggego12',
-        'HOST' : 'localhost',
-        'PORT' : '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -132,3 +139,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+LOGIN_REDIRECT_URL = 'surat_keluar'
+
+LOGIN_URL = 'masuk'
